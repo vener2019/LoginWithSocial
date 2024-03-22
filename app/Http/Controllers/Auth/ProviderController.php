@@ -26,7 +26,7 @@ class ProviderController extends Controller
             $user = User::where([
                 'provider' => $provider,
                 'provider_id' => $users->id
-            ]);
+            ])->first();
 
             if(!$user){
                 $user = User::create([
